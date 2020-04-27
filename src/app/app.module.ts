@@ -6,19 +6,30 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {TopBarComponent} from './top-bar/top-bar.component';
 import {ProductListComponent} from './product-list/product-list.component';
+import {ShippingListComponent} from './shipping-list/shipping-list.component';
+import {CartComponent} from './cart/cart.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component: ProductListComponent},
+      {path: 'cart', component: CartComponent},
+      {path: 'shipping', component: ShippingListComponent},
+      {path: 'products/:id', component: ProductDetailComponent},
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
+    ShippingListComponent,
+    CartComponent,
+    ProductDetailComponent,
   ],
   bootstrap: [AppComponent]
 })

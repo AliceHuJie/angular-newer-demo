@@ -1,0 +1,4 @@
+<div *ngFor="let item of items | async">
+  <span>{{item.type}}</span>
+  <span>{{item.price | currency}}</span>
+</div>
